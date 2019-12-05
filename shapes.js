@@ -26,8 +26,26 @@ window.onload = function() {
  */
 
 const sayHello = function() {
-    // write your exercise 1 code here
+    let hello = document.getElementById("student-canvas-1");
+    let word = hello.getContext("2d");
+    
+  word.clearRect(0, 0, hello.width, hello.height);
+    
+  let wordInput = "";
+  let x = true;
+    
+  while (x == true){
+    wordInput = window.prompt("Message: ", "");
+    if (wordInput.length > 50){
+      alert("Your message is too long. Please enter another message under 50 characters.");
+    }else {
+      x = false
+    }
+  }
+  word.font = "48px sans-serif";
+  word.strokeText(wordInput, 30, 70);
 };
+
 
 /*
  * Exercise 2.
