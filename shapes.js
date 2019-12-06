@@ -52,8 +52,40 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-    // write your exercise 2 code here
+     let canvasRectangle = document.getElementById("student-canvas-2");
+     let rectangle = canvasRectangle.getContext("2d");
+  rectangle.clearRect(0, 0, canvasRectangle.width, canvasRectangle.height);
+ 
+    let run = true;
+  while(run == true){
+    let width = window.prompt("Width: ", "");
+    let height = window.prompt("Height: ", "");
+    let rectX = window.prompt("x: ", "");
+    let rectY = window.prompt("y: ", "");
+    
+      if(isNaN(width) == true || isNaN(height) == true || isNaN(rectX) == true || isNaN(rectY) == true){
+      alert("At least one of the values was not a number. Please try again.");
+   }else if(height == null || width == null || rectX == null || rectY == null){
+      run = false;
+    }else if(height > 512 || height < 1){
+      alert("The height must be between 1 and 512.");
+    }else if(width > 1024 || width < 1){
+      alert("The width must be between 1 and 1024.");
+    }else if(rectX > 1024 || rectX < 1){
+      alert("The x-coordinate must be between 1 and 1024.");
+    }else if(rectY > 512 || rectY < 1){
+      alert("The y-coordinate must be between 1 and 512.");
+    }else {
+    
+      rectangle.beginPath();
+      rectangle.rect(rectX, rectY, width, height);
+      rectangle.stroke();
+     
+      run = false;
+    }
+  }
 };
+
 
 /*
  * Exercise 3.
