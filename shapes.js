@@ -92,7 +92,69 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-    // write your exercise 3 code here
+     let canvasColored = document.getElementById("student-canvas-3");
+    let colored = canvasColored.getContext("2d");
+    
+    colored.clearRect(0, 0, canvasColored.width, canvasColored.height);
+    
+    let run = true;
+    let color = null;
+    
+    while (run == true){
+      color = window.prompt("Color: ");
+      color = color.toLowerCase();
+      color = color.trim();
+      switch (color){
+        
+          case "black":
+          colored.fillStyle = "black";
+          run = false;
+          break;
+       
+          case "blue":
+          colored.fillStyle = "blue";
+          run = false;
+          break;
+      
+          case "orange":
+          colored.fillStyle = "orange";
+          run = false;
+          break;
+      
+          case "green":
+          colored.fillStyle = "green";
+          run = false;
+          break;
+       
+          case "purple":
+          colored.fillStyle = "purple";
+          run = false;
+          break;
+     
+          case "yellow":
+          colored.fillStyle = "yellow";
+          run = false;
+          break;
+       
+          case "red":
+          colored.fillStyle = "red";
+          run = false;
+          break;
+       
+          case null:
+          run = false;
+          break;
+       
+          default:
+          alert("That is not a supported color. Try again.");
+          break;
+      }
+    }
+    if(color != null){
+      colored.beginPath();
+      colored.rect(10, 10, 100, 50);
+      colored.fill();
+    }
 };
 
 /*
