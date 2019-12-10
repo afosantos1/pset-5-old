@@ -19,12 +19,17 @@ window.onload = function() {
     // equivalent set of six event listeners for your solutions. the first one is done for you.
 
     document.getElementById("hello").onclick = sayHello;
+document.getElementById("rectangle").onclick = drawRectangle;
+document.getElementById("colored_rectangle").onclick = drawColoredRectangle;
+document.getElementById("triangle").onclick = drawTriangle;
+document.getElementById("smile").onclick = drawFace;
+document.getElementById("pyramid").onclick = drawPyramid;
 }
+
 
 /*
  * Exercise 1.
  */
-
 const sayHello = function() {
     let hello = document.getElementById("student-canvas-1");
     let word = hello.getContext("2d");
@@ -43,13 +48,14 @@ const sayHello = function() {
     }
   }
   word.font = "48px sans-serif";
-  word.strokeText(wordInput, 30, 70);
-};
+  word.fillText(wordInput, 30, 70);
+}
 
 
 /*
  * Exercise 2.
  */
+
 
 const drawRectangle = function() {
      let canvasRectangle = document.getElementById("student-canvas-2");
@@ -84,7 +90,7 @@ const drawRectangle = function() {
       run = false;
     }
   }
-};
+}
 
 
 /*
@@ -155,13 +161,12 @@ const drawColoredRectangle = function() {
       colored.rect(10, 10, 100, 50);
       colored.fill();
     }
-};
+}
 
 /*
  * Exercise 4.
  */
 
-const drawTriangle = function() {
     const drawTriangle = function() {
     const canvas = document.getElementById('student-canvas-4');
      const ctx = canvas.getContext('2d');
@@ -183,7 +188,7 @@ const drawTriangle = function() {
       alert("Your triangle won't fit on the canvas.")
     }
       
-  }  while (side1*side1 + side2*side2 != side3*side3 || isNaN(side1) || isNaN(side2) || isNaN(side3 || side1 > 1024 || side2 > 1024 || side3 > 1024))
+  }  while (side1*side1 + side2*side2 != side3*side3 || isNaN(side1) || isNaN(side2) || isNaN(side3 || side1 > 1024 || side2 > 1024 || side3 > 1024)){
 
   var height = Math.min (side1, side2, side3)
   var hypotenuse = Math.max(side1, side2, side3)
@@ -198,13 +203,13 @@ const drawTriangle = function() {
   ctx.lineTo(base, height)
   ctx.lineTo(25, 25)
   ctx.stroke();
-};
+  }
+}
 
 /*
  * Exercise 5.
  */
 
-const drawFace = function() {
   const drawFace = function() {
   const canvas = document.getElementById('student-canvas-5');
   const ctx = canvas.getContext('2d');
@@ -228,7 +233,7 @@ const drawFace = function() {
       alert("Your smiley face won't fit on the canvas.")
     }
       
-  } while (radius > 256 || isNaN(radius) || radius < 32)
+  } while (radius > 256 || isNaN(radius) || radius < 32){
 
   var radius_eyes = 0.15 * radius
   var radius_mouth = 0.7 * radius
@@ -249,13 +254,13 @@ const drawFace = function() {
   ctx.arc(512 + 0.4 * radius, 256 - 0.4* radius, radius_eyes, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
-};
+  }
+}
 
 /*
  * Exercise 6 (extra credit).
  */
 
-const drawPyramid = function() {
   const drawPyramid = function() {
   const canvas = document.getElementById('student-canvas-6');
   const ctx = canvas.getContext('2d');
@@ -280,4 +285,4 @@ const drawPyramid = function() {
     }
       
   } while (isNaN(side) || side > 101 || side < 1)
-};
+}
