@@ -60,7 +60,7 @@ const drawRectangle = function() {
   var height = 0;
   var x = 0;
   var y = 0;
-  
+
   do {
     var width = prompt("Width: ")
     var height = prompt("Height: ")
