@@ -34,8 +34,8 @@ const sayHello = function() {
   const canvas = document.getElementById('student-canvas-1');
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  do {
+  
+    do {
     var message = prompt("Message: ")
     if (message.length > 50) {
       alert("Your message is too long. Keep it under 50 characters")
@@ -54,6 +54,7 @@ const sayHello = function() {
 const drawRectangle = function() {
   const canvas = document.getElementById('student-canvas-2');
   const ctx = canvas.getContext('2d');
+    
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   var width = 0;
