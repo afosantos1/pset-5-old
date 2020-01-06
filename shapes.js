@@ -170,12 +170,7 @@ const drawTriangle = function() {
     ctx.lineTo(25, 25)
     ctx.stroke();
   };
-    
-    if (side1=side2=side3) {
-        console.log(¨Invalid input¨)
-    }
 }
-
 /*
  * Exercise 5.
  */
